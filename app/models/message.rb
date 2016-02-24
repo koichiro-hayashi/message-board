@@ -2,7 +2,7 @@ class Message < ActiveRecord::Base
   # 名前は必須入力かつ20文字以内
   validates :name , length: { maximum: 20 } , presence: true
   #年齢は必須入力かつ0文字以上4文字以下
-  validates :age , numericality:  {greater_than: 0 } , length: {maximum: 3 }
+  validates :age , numericality:  {greater_than: 0,less_than: 120 }
   # 内容は必須入力かつ2文字以上30文字以下
   validates :body , length: { minimum: 2, maximum: 30 } , presence: true
   
